@@ -1,0 +1,114 @@
+<div class="container-fluid my-4">
+  <div class="row">
+    <div class="col-12">
+      <mat-card class="leave-card">
+        <mat-card-header>
+          <mat-card-title class="text-white">Leave Portal</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="row">
+            <div class="col-md-4" *ngFor="let leaveRequest of leaveRequests">
+              <mat-card class="mb-4">
+                <mat-card-header>
+                  <div class="mat-card-header-content">
+                    <span>Employee Id: <strong>{{leaveRequest.employeeId}}</strong></span>
+                  </div>
+                </mat-card-header>
+
+                <mat-card-content>
+                  <div class="row">
+                    <div class="col-6">
+                      <strong>Start Date:</strong> {{leaveRequest.startDate}}
+                    </div>
+                    <div class="col-6">
+                      <strong>End Date:</strong> {{leaveRequest.endDate}}
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-6">
+                      <strong>Status:</strong> {{leaveRequest.status}}
+                    </div>
+                    <div class="col-6">
+                      <strong>Type:</strong> {{leaveRequest.leaveType}}
+                    </div>
+                  </div>
+                </mat-card-content>
+
+                <mat-card-actions align="end">
+                  <button mat-raised-button color="primary" (click)="approve(leaveRequest)" [disabled]="leaveRequest.status === 'Approved' || leaveRequest.status === 'Rejected'">
+                    Approve
+                  </button>
+                  <button mat-raised-button color="warn" (click)="reject(leaveRequest)" [disabled]="leaveRequest.status === 'Approved' || leaveRequest.status === 'Rejected'">
+                    Reject
+                  </button>
+                </mat-card-actions>
+              </mat-card>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<!-- <div class="container-fluid my-4">
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header bg-secondary">
+          <div class="row">
+            <div class="col-6 text-white">
+              <strong>Leave Portal</strong>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card mb-4" *ngFor="let leaveRequest of leaveRequests ">
+
+                <div class="card-header d-flex justify-content-between align-items-center">
+                  <span>Employee Id : <strong>{{leaveRequest.employeeId}}</strong> </span>
+                </div>
+
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-6">
+                      <strong>Start Date:</strong> {{leaveRequest.startDate}}
+                    </div>
+                    <div class="col-6">
+                      <strong>End Date:</strong> {{leaveRequest.endDate}}
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-6">
+                      <strong>Status:</strong> {{leaveRequest.status}}
+                    </div>
+                    <div class="col-6">
+                      <strong>Type:</strong> {{leaveRequest.leaveType}}
+                    </div>
+                  </div>
+
+                  <div class="card-footer text-end">
+                    <button class="btn btn-success btn-sm" (click)="approve(leaveRequest)">
+                      Approve
+                    </button>
+                    <button class="btn btn-danger btn-sm" (click)="reject(leaveRequest)">
+                      Reject
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div> -->

@@ -1,0 +1,91 @@
+<div class="container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title class="title">
+        <mat-icon color="primary">event_note</mat-icon>
+        New Leave Request
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form id="leaveRequestForm">
+        <div class="row">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Enter Leave Type</mat-label>
+            <input
+              matInput
+              type="text"
+              [(ngModel)]="requestForm.leaveType"
+              name="leaveType"
+              placeholder="E.g., Sick Leave, Casual Leave"
+            />
+            <mat-icon matSuffix>edit</mat-icon>
+          </mat-form-field>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Start Date</mat-label>
+              <input
+                matInput
+                [matDatepicker]="startPicker"
+                [(ngModel)]="requestForm.startDate"
+                name="startDate"
+                placeholder="Select start date"
+              />
+              <mat-datepicker-toggle
+                matSuffix
+                [for]="startPicker"
+              ></mat-datepicker-toggle>
+              <mat-datepicker #startPicker></mat-datepicker>
+            </mat-form-field>
+          </div>
+
+          <div class="col">
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>End Date</mat-label>
+              <input
+                matInput
+                [matDatepicker]="endPicker"
+                [(ngModel)]="requestForm.endDate"
+                name="endDate"
+                placeholder="Select end date"
+              />
+              <mat-datepicker-toggle
+                matSuffix
+                [for]="endPicker"
+              ></mat-datepicker-toggle>
+              <mat-datepicker #endPicker></mat-datepicker>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="row">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Reason</mat-label>
+            <textarea
+              matInput
+              rows="4"
+              [(ngModel)]="requestForm.reason"
+              name="reason"
+              placeholder="Provide a brief reason for the leave"
+            ></textarea>
+            <mat-icon matSuffix>message</mat-icon>
+          </mat-form-field>
+        </div>
+
+        <div class="actions">
+          <button
+            mat-raised-button
+            color="primary"
+            (click)="addLeaveRequest()"
+            type="submit"
+          >
+            Submit
+          </button>
+          <!-- <button mat-button color="warn" type="reset">Cancel</button> -->
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

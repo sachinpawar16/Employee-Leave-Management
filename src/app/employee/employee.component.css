@@ -1,0 +1,35 @@
+.container-fluid {
+  .mat-card {
+    padding: 16px;
+    margin-bottom: 10px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .employee-table .mat-card-content {
+    overflow-x: auto;
+  }
+
+  .employee-form .form-buttons {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .full-width {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+
+  mat-form-field{
+
+  padding: 5px;
+
+  }
+
+  .bg-secondary {
+    background-color: #66b6fb !important;
+    border-top-left-radius:8px;
+    border-top-right-radius:8px;
+    padding: 5px;
+  }
+}

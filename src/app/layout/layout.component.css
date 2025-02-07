@@ -1,0 +1,28 @@
+mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  background-color: #3f51b5; /* Primary color */
+}
+
+.nav-links a {
+  margin-right: 1rem;
+  text-decoration: none;
+  color: white;
+}
+
+.nav-links a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.welcome-text {
+  color: #fff;
+  font-size: 14px;
+}
